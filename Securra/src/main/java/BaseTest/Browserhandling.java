@@ -1,7 +1,9 @@
 package BaseTest;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -11,7 +13,7 @@ public class Browserhandling {
 	
 	//WebDriverManager.chromedriver().setup();
 	public static ChromeDriver driver;
-	@BeforeMethod
+	@BeforeClass	
 	public static void browser()
 	{
 		System.out.println("browser handling");
@@ -23,11 +25,10 @@ public class Browserhandling {
 		System.out.println("browser opened");
 		
 	}
-	@AfterMethod 
-	public static void teardown()
-	{
-		
-		driver.quit();
-	}
+	/*
+	 * @AfterClass public static void teardown() {
+	 * 
+	 * driver.quit(); }
+	 */
 
 }

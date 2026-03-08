@@ -8,14 +8,14 @@ import Pages.Pagelogin;
 public class TestLogin extends Browserhandling
 
 {
-	@Test
+	@Test (priority=0)
 	public static void verfiyusername() throws InterruptedException
 	{
 		
 		Pagelogin pagelogin=new Pagelogin(driver);
 		//pagelogin.flag("In");
-		
-		pagelogin.enterusername("8299910005");
+		Thread.sleep(2000);
+		pagelogin.enterusername("8299910009");
 		System.out.println("username entered");
 		pagelogin.clickcontinue();
 		System.out.println("continue button clicked");
