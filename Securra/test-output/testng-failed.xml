@@ -5,8 +5,8 @@
     <classes>
       <class name="testcase.Testusermanagement">
         <methods>
+          <include name="verifyemptyerrormsg"/>
           <include name="browser"/>
-          <include name="verfiyusermanagement"/>
         </methods>
       </class> <!-- testcase.Testusermanagement -->
     </classes>

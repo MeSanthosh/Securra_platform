@@ -1,5 +1,6 @@
 package testcase;
 
+import org.openqa.selenium.WebDriver.Window;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -43,15 +44,35 @@ public class Testusermanagement extends Browserhandling {
 		Thread.sleep(2000);
 		System.out.println("add button clicked");
 		usermgmt.adduser();
+		Thread.sleep(2000);
 		System.out.println("add button clicked");
-		 Thread.sleep(2000);
-		String Actualerror= usermgmt.geterrormsg();
-		String Expectederror="Team name should be minimum 3 characters";
-		Assert.assertEquals(Actualerror, Expectederror);
+		 
+		
+		
+		
+	}
+	@Test (priority=2)
+	public void verifylengtherrormsg()
+	{
+		Usermanagement usermgmt=new Usermanagement(driver);
+		String actualmsg=usermgmt.geterrormsg();
+		String expectedmsg="Team name should be minimum 3 characters";
+		Assert.assertEquals(actualmsg, expectedmsg);
 		System.out.println("error message verified");
 		
 	}
+	@Test (priority=3)
+	public void verifyemptyerrormsg()
+	{
+		Usermanagement usermgmt=new Usermanagement(driver);
+		driver.navigate().refresh();
+		 usermgmt.adduserrerrors();
 	
+		String exceptedmsg="Required Field cannot be left blank";
+		Assert.assertEquals(actualmsg, exceptedmsg);
+		System.out.println("mandatory error message has been verified");
+	}
+
 	
 	
 	
