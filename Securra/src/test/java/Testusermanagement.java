@@ -72,7 +72,7 @@ public class Testusermanagement extends Browserhandling {
 //		Assert.assertEquals(actualmsg, exceptedmsg);
 //		System.out.println("mandatory error message has been verified");
 	
-	// Santhosh kumar
+
 //	}
 
 	
