@@ -1,16 +1,33 @@
-//stage('Build') {
-    //steps {
-      //  sh 'mvn clean install'
-    //}
-//}
-
 pipeline {
     agent any
 
+    tools {
+        maven 'Maven'
+    }
+
     stages {
+
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/MeSanthosh/Securra_platform.git'
+            }
+        }
+
         stage('Build') {
             steps {
-                echo 'Build started'
+                bat 'mvn clean compile'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                bat 'mvn test'
+            }
+        }
+
+        stage('Package') {
+            steps {
+                bat 'mvn package'
             }
         }
     }
