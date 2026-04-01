@@ -71,6 +71,8 @@ public class Testusermanagement extends Browserhandling {
 //		String exceptedmsg="Required Field cannot be left blank";
 //		Assert.assertEquals(actualmsg, exceptedmsg);
 //		System.out.println("mandatory error message has been verified");
+	
+	// Santhosh kumar
 //	}
 
 	
